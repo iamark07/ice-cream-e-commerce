@@ -6,6 +6,13 @@ window.onload = () => {
     y: -100,
     duration: 1,
   });
+  
+  gsap.from(".animate", {
+    opacity: 0,
+    y: 100,
+    stagger: 0.4,
+    duration: 1,
+  });
 
   const images = document.querySelectorAll(".hero_image");
   const titles = [
@@ -59,13 +66,11 @@ window.onload = () => {
   // Cycle through content every 6 seconds
   setInterval(updateHeroSection, 6000);
 
+  // Run the first update immediately
+  updateHeroSection();
+
   // Initial GSAP animation on page load
-  gsap.from(".animate", {
-    opacity: 0,
-    y: 100,
-    stagger: 0.3,
-    duration: 1,
-  });
+  
 
   // GSAP for Hero Section Animation on Load
   //   gsap.from(".hero-content", {
